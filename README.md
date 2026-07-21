@@ -1,23 +1,26 @@
-# l0sav Photography — Version 1
+# l0sav Photography — Quiet Wonder
 
-Responsive static photography website for GitHub and Cloudflare Pages.
+Static HTML/CSS/JavaScript website for GitHub and Cloudflare Pages.
 
-## Upload to GitHub
+## Publish through GitHub
+
 1. Open the `l0sav-photography` repository.
-2. Select **Add file → Upload files**.
-3. Upload the contents of this folder, preserving folders.
-4. Commit to `main`.
+2. Choose **Add file → Upload files**.
+3. Upload the contents of this folder, preserving the `assets` directory.
+4. Commit directly to `main`.
+5. Cloudflare Pages will automatically deploy the new commit.
 
-## Cloudflare Pages
+## Cloudflare settings
+
 - Framework preset: None
 - Build command: blank
 - Build output directory: `/`
 - Production branch: `main`
 
-## Before launch
-- Replace the placeholder email on `contact.html`.
-- Confirm image titles, locations, and story facts.
-- Add watermarks only where desired.
-- Connect a real contact form later.
+## Notes
 
-The included WebP images are optimized copies. Originals were not modified.
+- Email and social links have been added.
+- Print pricing is intentionally omitted; the site encourages custom inquiries.
+- Portrait photography is intentionally held for a later release.
+- Hero and gallery photographs are web-optimized copies, not full-resolution source files.
+- The site uses Google Fonts when online and falls back to Georgia/Arial if unavailable.
