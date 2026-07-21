@@ -1,26 +1,14 @@
-# l0sav Photography — Quiet Wonder
+# l0sav Photography — Edition One: The Art of Noticing
 
-Static HTML/CSS/JavaScript website for GitHub and Cloudflare Pages.
+Upload the complete contents of this folder to the root of the GitHub repository.
 
-## Publish through GitHub
-
-1. Open the `l0sav-photography` repository.
-2. Choose **Add file → Upload files**.
-3. Upload the contents of this folder, preserving the `assets` directory.
-4. Commit directly to `main`.
-5. Cloudflare Pages will automatically deploy the new commit.
-
-## Cloudflare settings
-
-- Framework preset: None
-- Build command: blank
-- Build output directory: `/`
-- Production branch: `main`
-
-## Notes
-
-- Email and social links have been added.
-- Print pricing is intentionally omitted; the site encourages custom inquiries.
-- Portrait photography is intentionally held for a later release.
-- Hero and gallery photographs are web-optimized copies, not full-resolution source files.
-- The site uses Google Fonts when online and falls back to Georgia/Arial if unavailable.
+Included:
+- Responsive mobile navigation
+- Enlarging gallery hover effects
+- Click-to-open lightbox
+- Google Analytics measurement ID `G-Z0NKE904WG` on every HTML page
+- Open Graph metadata
+- Sitemap and robots.txt
+- Updated first-person manifesto
+- New Stories and Things I Noticed photography
+- Instagram, Facebook, YouTube, and TikTok links

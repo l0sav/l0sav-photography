@@ -1,31 +1,61 @@
 
 const header = document.querySelector('[data-header]');
+const menuButton = document.querySelector('[data-menu-button]');
 const menu = document.querySelector('[data-menu]');
-const button = document.querySelector('[data-menu-button]');
 
-function updateHeader(){
-  if(window.scrollY > 40 || !document.body.classList.contains('home')) header.classList.add('scrolled');
-  else header.classList.remove('scrolled');
+const syncHeader = () => {
+  if (header) header.classList.toggle('scrolled', window.scrollY > 30);
+};
+syncHeader();
+addEventListener('scroll', syncHeader, {passive:true});
+
+if (menuButton && menu) {
+  menuButton.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded', String(open));
+    header?.classList.toggle('menu-open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    menuButton.setAttribute('aria-expanded', 'false');
+    header?.classList.remove('menu-open');
+    document.body.style.overflow = '';
+  }));
 }
-updateHeader();
-window.addEventListener('scroll', updateHeader, {passive:true});
 
-button?.addEventListener('click', () => {
-  const open = menu.classList.toggle('open');
-  button.setAttribute('aria-expanded', String(open));
-  document.body.style.overflow = open ? 'hidden' : '';
-});
-menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  menu.classList.remove('open');
-  document.body.style.overflow = '';
-}));
-
-const observer = new IntersectionObserver(entries => {
+const reveal = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if(entry.isIntersecting){
+    if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+      reveal.unobserve(entry.target);
     }
   });
-}, {threshold:.12});
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}, {threshold: .08});
+document.querySelectorAll('.reveal').forEach(el => reveal.observe(el));
+
+const modal = document.querySelector('[data-lightbox-modal]');
+if (modal) {
+  const modalImage = modal.querySelector('img');
+  const caption = modal.querySelector('.lightbox-caption');
+  const close = () => {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  };
+  document.querySelectorAll('[data-lightbox]').forEach(item => {
+    item.addEventListener('click', () => {
+      const image = item.querySelector('img');
+      const title = item.querySelector('h3')?.textContent || '';
+      modalImage.src = image.src;
+      modalImage.alt = image.alt;
+      caption.textContent = title;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+    });
+  });
+  modal.querySelector('[data-lightbox-close]').addEventListener('click', close);
+  modal.addEventListener('click', e => { if (e.target === modal) close(); });
+  addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+}

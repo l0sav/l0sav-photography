@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://l0sav-photography.pages.dev/sitemap.xml
