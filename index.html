@@ -6,12 +6,16 @@
   <title>l0sav Photography | The Art of Noticing</title>
   <meta name="description" content="Northern California photography, quiet stories, and an invitation to slow down and notice the world around you.">
   <meta name="theme-color" content="#f5f1e9">
+  <link rel="preload" as="image" href="assets/images/hero-fog-bridge.webp" fetchpriority="high">
   <link rel="canonical" href="https://l0sav-photography.pages.dev/">
   <meta property="og:title" content="l0sav Photography | The Art of Noticing">
   <meta property="og:description" content="Northern California photography, quiet stories, and an invitation to slow down and notice the world around you.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://l0sav-photography.pages.dev/">
   <meta property="og:image" content="https://l0sav-photography.pages.dev/assets/images/hero-fog-bridge.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Italiana&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z0NKE904WG"></script>
@@ -22,8 +26,10 @@
   gtag('config', 'G-Z0NKE904WG');
 </script>
   <script defer src="assets/site.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Photographer","name":"l0sav Photography","url":"https://l0sav-photography.pages.dev/","email":"mailto:lauren.savignano@gmail.com","sameAs":["https://www.instagram.com/l0sav","https://www.facebook.com/profile.php?id=100092620043618","https://www.youtube.com/@l0sav","https://www.tiktok.com/@l0_sav"],"description":"Northern California photography, quiet stories, and an invitation to slow down and notice the world around you."}</script>
 </head>
 <body class="home">
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <header class="site-header" data-header>
   <a class="brand" href="index.html" aria-label="l0sav Photography home">
@@ -43,9 +49,9 @@
   </nav>
 </header>
 
-<main>
+<main id="main-content">
 <section class="hero">
-  <img src="assets/images/hero-fog-bridge.webp" alt="Two bridges emerging through morning fog in warm early light">
+  <img fetchpriority="high" decoding="async" src="assets/images/hero-fog-bridge.webp" alt="Two bridges emerging through morning fog in warm early light">
   <div class="hero-shade"></div>
   <div class="hero-copy">
     <p class="arrival">Edition One · The Art of Noticing</p>
@@ -62,17 +68,17 @@
 
 <section class="feature-grid section-pad">
   <a class="feature-card reveal" href="things.html">
-    <img src="assets/images/inspirational-flower.webp" alt="Delicate pale purple flower glowing in soft light">
+    <img loading="lazy" decoding="async" src="assets/images/inspirational-flower.webp" alt="Delicate pale purple flower glowing in soft light">
     <div><p class="eyebrow">A visual journal</p><h3>Things I Noticed</h3><p>Small marvels, passing light, and the details that reward a closer look.</p></div>
   </a>
   <a class="feature-card reveal" href="stories.html">
-    <img src="assets/images/oak-path.webp" alt="A narrow path winding through old oak trees">
+    <img loading="lazy" decoding="async" src="assets/images/oak-path.webp" alt="A narrow path winding through old oak trees">
     <div><p class="eyebrow">Behind the frame</p><h3>Stories</h3><p>Photographs become memorable when the experience behind them is allowed to remain.</p></div>
   </a>
 </section>
 
 <section class="wide-story reveal">
-  <img src="assets/images/oak-silhouette.webp" alt="A lone oak tree silhouetted against a pale sky">
+  <img loading="lazy" decoding="async" src="assets/images/oak-silhouette.webp" alt="A lone oak tree silhouetted against a pale sky">
   <div class="wide-story-copy">
     <p class="eyebrow">California, beyond the postcard</p>
     <h2>Long before the roads and rooftops, the oaks were already here.</h2>

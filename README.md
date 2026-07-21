@@ -12,3 +12,5 @@ Included:
 - Updated first-person manifesto
 - New Stories and Things I Noticed photography
 - Instagram, Facebook, YouTube, and TikTok links
+
+Refinement pass includes diagonal zero strike-through, softer hero overlay, typography tuning, reduced-motion support, skip links, lazy-loaded images, font preconnects, structured data, and improved menu accessibility.

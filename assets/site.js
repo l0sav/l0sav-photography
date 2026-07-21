@@ -13,12 +13,14 @@ if (menuButton && menu) {
   menuButton.addEventListener('click', () => {
     const open = menu.classList.toggle('open');
     menuButton.setAttribute('aria-expanded', String(open));
+    menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
     header?.classList.toggle('menu-open', open);
     document.body.style.overflow = open ? 'hidden' : '';
   });
   menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
     menu.classList.remove('open');
     menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-label', 'Open navigation');
     header?.classList.remove('menu-open');
     document.body.style.overflow = '';
   }));
@@ -59,3 +61,15 @@ if (modal) {
   modal.addEventListener('click', e => { if (e.target === modal) close(); });
   addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
 }
+
+
+addEventListener('keydown', event => {
+  if (event.key === 'Escape' && menu?.classList.contains('open')) {
+    menu.classList.remove('open');
+    menuButton?.setAttribute('aria-expanded', 'false');
+    menuButton?.setAttribute('aria-label', 'Open navigation');
+    header?.classList.remove('menu-open');
+    document.body.style.overflow = '';
+    menuButton?.focus();
+  }
+});
