@@ -25,3 +25,9 @@ This release marks the transition from a photography portfolio to a living archi
 - Added a closing observation question to each entry while preserving the gallery’s visual breathing room.
 - Confirmed Google Analytics 4 measurement ID `G-Z0NKE904WG` is present on every HTML page.
 - Preserved collection numbers, structured data, Story pages, and social metadata from Version 2.1.
+
+## Version 2.1.2 — Field Notes Interaction Hotfix
+
+- Separated the Field Notes controls from the photograph lightbox.
+- Clicking “Read the Field Notes” or the plus/minus control now only expands or collapses the written notes.
+- Clicking the photograph continues to open the enlarged image viewer.

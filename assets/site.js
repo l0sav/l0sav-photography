@@ -36,6 +36,11 @@ const reveal = new IntersectionObserver(entries => {
 }, {threshold: .08});
 document.querySelectorAll('.reveal').forEach(el => reveal.observe(el));
 
+// Keep the Field Notes accordion independent from the photograph lightbox.
+document.querySelectorAll('.field-notes').forEach(notes => {
+  notes.addEventListener('click', event => event.stopPropagation());
+});
+
 const modal = document.querySelector('[data-lightbox-modal]');
 if (modal) {
   const modalImage = modal.querySelector('img');
